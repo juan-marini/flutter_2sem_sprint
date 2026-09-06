@@ -1,0 +1,13 @@
+# Este arquivo configura o analisador estatico do Dart.
+#
+# O projeto nao depende do pacote flutter_lints (proibido no pubspec.yaml
+# desta disciplina), entao as regras de lint sao declaradas diretamente aqui.
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    avoid_print: true
+
+# Mais informacoes sobre este arquivo em:
+# https://dart.dev/guides/language/analysis-options
