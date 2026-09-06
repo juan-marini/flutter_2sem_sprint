@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'navigation/app_navigation.dart';
+import 'navigation/app_routes.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -8,8 +10,8 @@ void main() {
 
 /// Widget raiz do EducaMais.
 ///
-/// A navegacao com `onGenerateRoute` e a tela de login entram nas fases
-/// seguintes. Por enquanto o app so aplica o tema oficial e mostra a marca.
+/// A navegacao usa `onGenerateRoute` com [AppNavigation.generateRoute] —
+/// nada de `routes: {}` no MaterialApp.
 class EducaMaisApp extends StatelessWidget {
   const EducaMaisApp({super.key});
 
@@ -21,27 +23,8 @@ class EducaMaisApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      home: const _EducaMaisPlaceholder(),
-    );
-  }
-}
-
-class _EducaMaisPlaceholder extends StatelessWidget {
-  const _EducaMaisPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'EducaMais',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: colorScheme.primary,
-                fontSize: 32,
-              ),
-        ),
-      ),
+      initialRoute: AppRoutes.login,
+      onGenerateRoute: AppNavigation.generateRoute,
     );
   }
 }
