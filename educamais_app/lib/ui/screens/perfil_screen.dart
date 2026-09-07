@@ -129,7 +129,7 @@ class PerfilScreen extends StatelessWidget {
               crossAxisCount: 2,
               mainAxisSpacing: 12,
               crossAxisSpacing: 12,
-              childAspectRatio: 1.3,
+              childAspectRatio: 1.1,
             ),
             itemBuilder: (context, index) {
               return _ConquistaCard(conquista: conquistas[index]);
